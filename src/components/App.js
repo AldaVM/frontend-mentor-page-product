@@ -1,11 +1,9 @@
 import React from "react";
+import "../index.css";
+import PageProduct from "../pages/ProductPage";
 
 function App() {
-  return (
-    <>
-      <h1>Main</h1>
-    </>
-  );
+  return <PageProduct />;
 }
 
 export default App;

@@ -3,6 +3,51 @@ import CartContext from "../contexts/cartContext";
 
 export default function CartProvider({ children, initialValues }) {
   const [products, setProducts] = useState(initialValues.productsOnCart);
+  const [isOpenCart, setIsOpenCart] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState(
+    initialValues.currentProduct
+  );
+  const [quantity, setQuantiy] = useState(0);
+
+  function plusQuantity() {
+    let tempQuantity = quantity + 1;
+    setQuantiy(tempQuantity);
+  }
+
+  function minusQuantity() {
+    if (quantity > 0) {
+      let tempQuantity = quantity - 1;
+      setQuantiy(tempQuantity);
+    }
+  }
+
+  function activeIdThumbs(id, thumbs) {
+    return thumbs.map((thumb) => {
+      if (thumb.id === id) {
+        return { ...thumb, isActive: true };
+      }
+
+      return { ...thumb, isActive: false };
+    });
+  }
+
+  function changeImageProduct(product, newSoruce, id) {
+    const newThumbsProducts = activeIdThumbs(id, product.thumbsProducts);
+
+    const newProduct = {
+      ...product,
+      imgPrincipal: {
+        source: newSoruce,
+      },
+      thumbsProducts: newThumbsProducts,
+    };
+    console.log(newProduct);
+    setCurrentProduct(newProduct);
+  }
+
+  function toggleStateOpenCart() {
+    setIsOpenCart(!isOpenCart);
+  }
 
   function getProductsList(products) {
     const productsIds = Object.keys(products);
@@ -47,6 +92,7 @@ export default function CartProvider({ children, initialValues }) {
 
     if (newProducts[productId]) {
       delete newProducts[productId];
+      setQuantiy(0);
     }
 
     setProducts(newProducts);
@@ -58,6 +104,13 @@ export default function CartProvider({ children, initialValues }) {
         products: getProductsList(products),
         addProductToCart,
         removeProductToCart,
+        isOpenCart: isOpenCart,
+        currentProduct: currentProduct,
+        quantity: quantity,
+        changeImageProduct,
+        toggleStateOpenCart,
+        minusQuantity,
+        plusQuantity,
       }}
     >
       {children}

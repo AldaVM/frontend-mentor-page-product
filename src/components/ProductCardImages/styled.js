@@ -5,6 +5,7 @@ export const ContainerPrincipalImage = styled.div`
   max-width: 500px;
   border-radius: 1rem;
   margin-bottom: 2rem;
+  cursor: pointer;
 
   img {
     display: inline-block;
@@ -31,6 +32,7 @@ export const ButtonSlideLeft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const ButtonSlideRight = styled.div`
@@ -43,6 +45,7 @@ export const ButtonSlideRight = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const ListThumbs = styled.ul`

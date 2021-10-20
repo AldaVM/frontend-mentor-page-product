@@ -8,10 +8,15 @@ export default function CartProvider({ children, initialValues }) {
     initialValues.currentProduct
   );
   const [quantity, setQuantiy] = useState(0);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   function plusQuantity() {
     let tempQuantity = quantity + 1;
     setQuantiy(tempQuantity);
+  }
+
+  function toggleStateOpenModal(isOpen) {
+    setIsOpenModal(isOpen);
   }
 
   function minusQuantity() {
@@ -107,6 +112,8 @@ export default function CartProvider({ children, initialValues }) {
         isOpenCart: isOpenCart,
         currentProduct: currentProduct,
         quantity: quantity,
+        isOpenModal: isOpenModal,
+        toggleStateOpenModal,
         changeImageProduct,
         toggleStateOpenCart,
         minusQuantity,

@@ -32,7 +32,7 @@ function ProductCardImages({
   product,
   isActiveSlides = false,
 }) {
-  const { changeImageProduct } = useContext(CartContext);
+  const { changeImageProduct, toggleStateOpenModal } = useContext(CartContext);
 
   function nextImage() {
     const products = product.thumbsProducts;
@@ -74,6 +74,10 @@ function ProductCardImages({
     });
   }
 
+  function openModal() {
+    toggleStateOpenModal(true);
+  }
+
   return (
     <section>
       <ContainerSlidePrincipal>
@@ -83,7 +87,7 @@ function ProductCardImages({
           </ButtonSlideLeft>
         )}
 
-        <ContainerPrincipalImage>
+        <ContainerPrincipalImage onClick={openModal}>
           <img src={imgPrincipal.source} alt={name} />
         </ContainerPrincipalImage>
 

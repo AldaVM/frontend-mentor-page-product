@@ -9,6 +9,11 @@ export default function CartProvider({ children, initialValues }) {
   );
   const [quantity, setQuantiy] = useState(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  function toggleMenu() {
+    setIsOpenMenu(!isOpenMenu);
+  }
 
   function plusQuantity() {
     let tempQuantity = quantity + 1;
@@ -113,7 +118,9 @@ export default function CartProvider({ children, initialValues }) {
         currentProduct: currentProduct,
         quantity: quantity,
         isOpenModal: isOpenModal,
+        isOpenMenu: isOpenMenu,
         toggleStateOpenModal,
+        toggleMenu,
         changeImageProduct,
         toggleStateOpenCart,
         minusQuantity,

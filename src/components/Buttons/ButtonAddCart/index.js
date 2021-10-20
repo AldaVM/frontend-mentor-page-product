@@ -33,7 +33,7 @@ function ButtonAddCart() {
     <Button onClick={() => onClickAddToCart(productTest)}>
       <img src={SVGIconCart} color="#fff" alt="Logo Cart" />
       <span>Add to cart</span>
-      {quantity == 0 && <ContainerMessage>{message}</ContainerMessage>}
+      {quantity === 0 && <ContainerMessage>{message}</ContainerMessage>}
     </Button>
   );
 }

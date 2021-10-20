@@ -28,8 +28,9 @@ function ProductCardDescription({
       <div>
         <LabelPrice>${price}.00</LabelPrice>
         <LabelDiscount>{discount}%</LabelDiscount>
+        <LabelOriginalPrice>${regularPrice}.00</LabelOriginalPrice>
       </div>
-      <LabelOriginalPrice>${regularPrice}.00</LabelOriginalPrice>
+     
       <ContainerButtonsCard>
         <ButtonQuantity quantity={0} />
         <ButtonAddCart />

@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const ButtonConteinerQuantity = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: var(--light-grayish-blue);
   padding: 1px;
   border-radius: 0.5rem;

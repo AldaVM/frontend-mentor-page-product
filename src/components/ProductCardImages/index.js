@@ -10,6 +10,12 @@ import {
 } from "./styled";
 import SVGIconPrevious from "../../images/icon-previous.svg";
 import SVGIconNext from "../../images/icon-next.svg";
+import { breakpointMovil } from "../../constants";
+
+function isViewportMovil() {
+  const mediaQuery = window.matchMedia(`(max-width: ${breakpointMovil})`);
+  return mediaQuery.matches;
+}
 
 function ThumbImage({ thumb, description, source, product, isActive, id }) {
   const { changeImageProduct } = useContext(CartContext);
@@ -75,6 +81,10 @@ function ProductCardImages({
   }
 
   function openModal() {
+    const isMovilViewport = isViewportMovil();
+    if (isMovilViewport) {
+      return;
+    }
     toggleStateOpenModal(true);
   }
 
@@ -87,11 +97,23 @@ function ProductCardImages({
           </ButtonSlideLeft>
         )}
 
+        {isViewportMovil() && (
+          <ButtonSlideLeft onClick={previousImage}>
+            <img src={SVGIconPrevious} alt="previous image" />
+          </ButtonSlideLeft>
+        )}
+
         <ContainerPrincipalImage onClick={openModal}>
           <img src={imgPrincipal.source} alt={name} />
         </ContainerPrincipalImage>
 
         {isActiveSlides && (
+          <ButtonSlideRight onClick={nextImage}>
+            <img src={SVGIconNext} alt="next image" />
+          </ButtonSlideRight>
+        )}
+
+        {isViewportMovil() && (
           <ButtonSlideRight onClick={nextImage}>
             <img src={SVGIconNext} alt="next image" />
           </ButtonSlideRight>

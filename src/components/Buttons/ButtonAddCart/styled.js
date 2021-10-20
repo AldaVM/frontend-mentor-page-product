@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { breakpointMovil } from "../../../constants";
 
 export const Button = styled.div`
   position: relative;
   width: 67%;
   padding: 1rem 2rem;
+  margin-top: 0;
   background-color: var(--orange-primary);
   color: var(--white);
   text-align: center;
@@ -18,6 +20,11 @@ export const Button = styled.div`
   span {
     display: inline-block;
     padding: 0 1rem;
+  }
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    width: 100%;
+    margin-top: 1rem;
   }
 `;
 

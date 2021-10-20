@@ -1,15 +1,26 @@
 import styled from "styled-components";
+import { breakpointMovil } from "../../constants";
 
 export const ContainerDescriptionCard = styled.section`
   width: 43%;
   padding: 0 1rem;
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
 `;
 
 export const ContainerButtonsCard = styled.div`
   width: 100%;
   padding-top: 3rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    flex-direction: column;
+  }
 `;
 
 export const TitleCard = styled.h1`
@@ -54,17 +65,23 @@ export const LabelDiscount = styled.span`
 
 export const LabelOriginalPrice = styled.span`
   position: relative;
-  display: inline-block;
+  display: block;
   color: var(--grayish-blue);
   font-size: 1.1rem;
   font-weight: 700;
   margin-top: 1rem;
+
   ::after {
-    width: 100%;
+    width: 68px;
     display: block;
     content: "";
     border: 1px solid var(--grayish-blue);
     position: absolute;
     top: 50%;
+  }
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    display: inline-block;
+    padding-left: 9rem;
   }
 `;

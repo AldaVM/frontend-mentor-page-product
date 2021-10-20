@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpointMovil } from "../../constants";
 
 export const HeaderTag = styled.div`
   width: 100%;
@@ -17,7 +18,15 @@ export const HeaderContainer = styled.div`
 
 export const ItemHeader = styled.div`
   display: flex;
+  position: relative;
+  top: 0;
   justify-content: space-between;
+  align-items: flex-start;
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    padding: 1rem;
+    top: -50%;
+  }
 `;
 
 export const ContainerButtonsHeader = styled.div`

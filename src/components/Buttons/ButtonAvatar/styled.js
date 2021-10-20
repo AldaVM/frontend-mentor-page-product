@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpointMovil } from "../../../constants";
 
 export const ContainerImageAvatar = styled.div`
   width: 65px;
@@ -10,6 +11,11 @@ export const ContainerImageAvatar = styled.div`
 
   :hover {
     border: 3px solid var(--orange-primary);
+  }
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    width: 40px;
+    height: 40px;
   }
 
   img {

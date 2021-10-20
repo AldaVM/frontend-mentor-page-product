@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpointMovil } from "../../constants";
 
 export const ContainerPrincipalImage = styled.div`
   width: 100%;
@@ -10,8 +11,21 @@ export const ContainerPrincipalImage = styled.div`
   img {
     display: inline-block;
     width: 100%;
+    height: auto;
     vertical-align: top;
     border-radius: 1rem;
+  }
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    max-width: 100%;
+    border-radius: 0;
+
+    img {
+      border-radius: 0;
+      width: 100vw;
+      height: 350px;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -33,6 +47,10 @@ export const ButtonSlideLeft = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    left: 25px;
+  }
 `;
 
 export const ButtonSlideRight = styled.div`
@@ -46,6 +64,10 @@ export const ButtonSlideRight = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    right: 25px;
+  }
 `;
 
 export const ListThumbs = styled.ul`
@@ -53,6 +75,10 @@ export const ListThumbs = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
+
+  @media only screen and (max-width: ${breakpointMovil}) {
+    display: none;
+  }
 `;
 
 export const ContainerThumb = styled.li`

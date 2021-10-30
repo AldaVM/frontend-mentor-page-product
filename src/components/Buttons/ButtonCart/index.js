@@ -8,7 +8,7 @@ function ButtonCart() {
 
   return (
     <ContainerButtonCart onClick={toggleStateOpenCart}>
-      {products.length > 0 && isOpenCart == true && (
+      {products.length > 0 && isOpenCart === true && (
         <span>{products[0].quantity}</span>
       )}
       <img src={SVGIconCart} alt="Logo Cart" />

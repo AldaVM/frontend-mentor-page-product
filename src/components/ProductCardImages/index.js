@@ -55,6 +55,7 @@ function ProductCardImages({
           changeImageProduct(product, products[0].source, products[0].id);
         }
       }
+      return;
     });
   }
 
@@ -77,6 +78,7 @@ function ProductCardImages({
           );
         }
       }
+      return;
     });
   }
 

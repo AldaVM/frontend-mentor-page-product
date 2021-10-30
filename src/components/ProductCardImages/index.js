@@ -55,7 +55,7 @@ function ProductCardImages({
           changeImageProduct(product, products[0].source, products[0].id);
         }
       }
-      return;
+      return index;
     });
   }
 
@@ -78,7 +78,7 @@ function ProductCardImages({
           );
         }
       }
-      return;
+      return index;
     });
   }
 
@@ -95,13 +95,13 @@ function ProductCardImages({
       <ContainerSlidePrincipal>
         {isActiveSlides && (
           <ButtonSlideLeft onClick={previousImage}>
-            <img src={SVGIconPrevious} alt="previous image" />
+            <img src={SVGIconPrevious} alt="previous button" />
           </ButtonSlideLeft>
         )}
 
         {isViewportMovil() && (
           <ButtonSlideLeft onClick={previousImage}>
-            <img src={SVGIconPrevious} alt="previous image" />
+            <img src={SVGIconPrevious} alt="previous button" />
           </ButtonSlideLeft>
         )}
 
@@ -111,13 +111,13 @@ function ProductCardImages({
 
         {isActiveSlides && (
           <ButtonSlideRight onClick={nextImage}>
-            <img src={SVGIconNext} alt="next image" />
+            <img src={SVGIconNext} alt="next button" />
           </ButtonSlideRight>
         )}
 
         {isViewportMovil() && (
           <ButtonSlideRight onClick={nextImage}>
-            <img src={SVGIconNext} alt="next image" />
+            <img src={SVGIconNext} alt="next button" />
           </ButtonSlideRight>
         )}
       </ContainerSlidePrincipal>
